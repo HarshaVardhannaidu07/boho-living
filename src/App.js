@@ -5,6 +5,7 @@ import { FloatingWhatsApp } from 'react-floating-whatsapp';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Features from './components/Features/Features';
+import ImageWall from './components/ImageWall/ImageWall';
 import RoomShowcase from './components/RoomShowcase/RoomShowcase';
 import Amenities from './components/Amenities/Amenities';
 import PricingPlans from './components/PricingPlans/PricingPlans';
@@ -26,6 +27,7 @@ function App() {
       <main>
         <Hero />
         <Features />
+        <ImageWall />
         <RoomShowcase />
         <Amenities />
         <PricingPlans />

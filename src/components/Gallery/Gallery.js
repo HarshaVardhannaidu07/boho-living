@@ -6,22 +6,16 @@ import styles from './Gallery.module.css';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState('single'); // Default to first category
   const sectionRef = useRef(null);
   const imagesRef = useRef([]);
 
-  // Collect all images from all room categories
-  const allImages = Object.keys(ROOM_CATEGORIES).flatMap(key => 
-    ROOM_CATEGORIES[key].images.map(img => ({
-      src: img,
-      category: key,
-      title: ROOM_CATEGORIES[key].title,
-    }))
-  );
-
-  const filteredImages = filter === 'all' 
-    ? allImages 
-    : allImages.filter(img => img.category === filter);
+  // Get filtered images based on selected category only
+  const filteredImages = ROOM_CATEGORIES[filter].images.map(img => ({
+    src: img,
+    category: filter,
+    title: ROOM_CATEGORIES[filter].title,
+  }));
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -86,14 +80,8 @@ const Gallery = () => {
           </div>
         </Parallax>
 
-        {/* Filter Buttons */}
+        {/* Filter Buttons - Only Room Categories */}
         <div className={styles.filters}>
-          <button 
-            className={`${styles.filterBtn} ${filter === 'all' ? styles.activeFilter : ''}`}
-            onClick={() => setFilter('all')}
-          >
-            All Rooms
-          </button>
           {Object.keys(ROOM_CATEGORIES).map(key => (
             <button
               key={key}
