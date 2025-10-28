@@ -1,8 +1,16 @@
+import { useState, useEffect } from 'react';
 import styles from './ImageWall.module.css';
 
 const ImageWall = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger animations after component mounts
+    setTimeout(() => setIsVisible(true), 100);
+  }, []);
+
   const images = [
-     '/CuratedChef (1).jpg',
+    '/CuratedChef (1).jpg',
     '/CuratedChef (2).jpg',
     '/CuratedChef (3).jpg',
     '/CuratedChef (11).jpg',
@@ -29,7 +37,7 @@ const ImageWall = () => {
   const column3 = getColumnImages(10, 5);
   const column4 = getColumnImages(15, 4);
   const column5 = getColumnImages(19, 2);
-  const column6 = getColumnImages(0, 5); // NEW: 6th column to fill gap
+  const column6 = getColumnImages(0, 5);
 
   return (
     <section className={styles.section}>
@@ -42,7 +50,12 @@ const ImageWall = () => {
           <div className={`${styles.column} ${styles.columnDown}`}>
             {[...column1, ...column1, ...column1].map((img, index) => (
               <div key={index} className={styles.imageCard}>
-                <img src={img} alt="" />
+                <img 
+                  src={img} 
+                  alt="" 
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             ))}
           </div>
@@ -53,7 +66,12 @@ const ImageWall = () => {
           <div className={`${styles.column} ${styles.columnUp}`}>
             {[...column2, ...column2, ...column2].map((img, index) => (
               <div key={index} className={styles.imageCard}>
-                <img src={img} alt="" />
+                <img 
+                  src={img} 
+                  alt="" 
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             ))}
           </div>
@@ -64,7 +82,12 @@ const ImageWall = () => {
           <div className={`${styles.column} ${styles.columnDown}`}>
             {[...column3, ...column3, ...column3].map((img, index) => (
               <div key={index} className={styles.imageCard}>
-                <img src={img} alt="" />
+                <img 
+                  src={img} 
+                  alt="" 
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             ))}
           </div>
@@ -75,7 +98,12 @@ const ImageWall = () => {
           <div className={`${styles.column} ${styles.columnUp}`}>
             {[...column4, ...column4, ...column4].map((img, index) => (
               <div key={index} className={styles.imageCard}>
-                <img src={img} alt="" />
+                <img 
+                  src={img} 
+                  alt="" 
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             ))}
           </div>
@@ -86,26 +114,36 @@ const ImageWall = () => {
           <div className={`${styles.column} ${styles.columnDown}`}>
             {[...column5, ...column5, ...column5].map((img, index) => (
               <div key={index} className={styles.imageCard}>
-                <img src={img} alt="" />
+                <img 
+                  src={img} 
+                  alt="" 
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Column 6 - NEW: Fills the right gap */}
+        {/* Column 6 */}
         <div className={styles.columnWrapper}>
           <div className={`${styles.column} ${styles.columnUp}`}>
             {[...column6, ...column6, ...column6].map((img, index) => (
               <div key={index} className={styles.imageCard}>
-                <img src={img} alt="" />
+                <img 
+                  src={img} 
+                  alt="" 
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Content */}
-      <div className={styles.content}>
+      {/* Content with Animations */}
+      <div className={`${styles.content} ${isVisible ? styles.visible : ''}`}>
         <span className={styles.badge}>Chef Curated</span>
         <h2 className={styles.title}>
           Delicious <span className={styles.highlight}>Chef-Cooked</span> Meals
