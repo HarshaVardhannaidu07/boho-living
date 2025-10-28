@@ -1,6 +1,4 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+import { initGA, logPageView } from './utils/analytics';
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
@@ -17,10 +15,14 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import { WHATSAPP_CONFIG } from './data/constants';
 import './App.css';
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+import { useEffect } from 'react';
 
 function App() {
+    useEffect(() => {
+    // Initialize Google Analytics
+    initGA();
+    logPageView();
+  }, []);
   return (
     <div className="app">
       <Header />
