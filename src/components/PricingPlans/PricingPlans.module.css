@@ -1,0 +1,280 @@
+/* ===== MOBILE FIRST (320px+) ===== */
+.section {
+  padding: 4rem 5%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease-out;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--color-white);
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-white);
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--color-white);
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  position: relative;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.popular {
+  border-color: var(--color-secondary);
+  box-shadow: 0 8px 30px rgba(255, 140, 66, 0.3);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -12px;
+  right: 1rem;
+  background: var(--color-secondary);
+  color: var(--color-white);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 15px rgba(255, 140, 66, 0.4);
+}
+
+.roomType {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.price {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-gray-light);
+}
+
+.priceAmount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-dark);
+}
+
+.pricePeriod {
+  font-size: 1rem;
+  color: var(--color-dark-teal);
+  opacity: 0.7;
+}
+
+.featureList {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(45, 95, 93, 0.1);
+  font-size: 0.95rem;
+}
+
+.checkIcon {
+  color: var(--color-secondary);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.bookBtn {
+  width: 100%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.bookBtn:active {
+  transform: scale(0.97);
+}
+
+/* ===== TABLET (768px+) ===== */
+@media (min-width: 768px) {
+  .section {
+    padding: 5rem 5%;
+  }
+
+  .header {
+    margin-bottom: 3.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+  }
+
+  .card {
+    padding: 2.5rem 2rem;
+  }
+
+  .roomType {
+    font-size: 1.65rem;
+  }
+
+  .priceAmount {
+    font-size: 2.75rem;
+  }
+
+  .feature {
+    font-size: 1rem;
+  }
+
+  /* Hover effects */
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-secondary);
+  }
+
+  .bookBtn:hover {
+    background: var(--color-secondary);
+    transform: scale(1.03);
+  }
+}
+
+/* ===== DESKTOP (1024px+) ===== */
+@media (min-width: 1024px) {
+  .section {
+    padding: 6rem 5%;
+  }
+
+  .header {
+    margin-bottom: 4rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1200px;
+  }
+
+  .card {
+    padding: 3rem 2.5rem;
+    border-radius: 25px;
+  }
+
+  .popular {
+    transform: scale(1.05);
+  }
+
+  .popular:hover {
+    transform: scale(1.08) translateY(-10px);
+  }
+
+  .roomType {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .price {
+    margin-bottom: 2rem;
+  }
+
+  .priceAmount {
+    font-size: 3rem;
+  }
+
+  .pricePeriod {
+    font-size: 1.1rem;
+  }
+
+  .featureList {
+    margin-bottom: 2.5rem;
+  }
+
+  .feature {
+    padding: 0.8rem 0;
+  }
+
+  .checkIcon {
+    font-size: 1.2rem;
+  }
+
+  .bookBtn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .card:hover {
+    transform: translateY(-15px);
+  }
+}
