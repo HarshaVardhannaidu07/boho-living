@@ -1,8 +1,5 @@
 import { useState, useRef } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
 import { FAQ_DATA } from '../../data/constants';
 import styles from './FAQ.module.css';
 
@@ -10,20 +7,6 @@ const FAQ = () => {
   const [openId, setOpenId] = useState(null);
   const sectionRef = useRef(null);
   const faqsRef = useRef([]);
-
-//   useGSAP(() => {
-//     gsap.from(faqsRef.current, {
-//       scrollTrigger: {
-//         trigger: sectionRef.current,
-//         start: 'top 75%',
-//       },
-//       x: -50,
-//       opacity: 0,
-//       duration: 0.6,
-//       stagger: 0.1,
-//       ease: 'power3.out',
-//     });
-//   }, []);
 
   const toggleFAQ = (id) => {
     setOpenId(openId === id ? null : id);

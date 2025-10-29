@@ -7,7 +7,6 @@ const RoomShowcase = () => {
   const [activeCategory, setActiveCategory] = useState('single');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
   const sectionRef = useRef(null);
 
   const currentRoom = ROOM_CATEGORIES[activeCategory];
@@ -49,7 +48,6 @@ const RoomShowcase = () => {
 
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
-    setIsFavorite(false);
   };
 
   return (

@@ -10,14 +10,14 @@ const Gallery = () => {
   const sectionRef = useRef(null);
   const imagesRef = useRef([]);
 
-  // Get filtered images based on selected category only
+  // Filtered images based on selected category only
   const filteredImages = ROOM_CATEGORIES[filter].images.map(img => ({
     src: img,
     category: filter,
     title: ROOM_CATEGORIES[filter].title,
   }));
 
-  // Handle keyboard navigation
+  // keyboard navigation
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (!selectedImage) return;
@@ -80,7 +80,7 @@ const Gallery = () => {
           </div>
         </Parallax>
 
-        {/* Filter Buttons - Only Room Categories */}
+        {/* Filter Buttons - Room Categories */}
         <div className={styles.filters}>
           {Object.keys(ROOM_CATEGORIES).map(key => (
             <button

@@ -11,7 +11,7 @@ const Hero = () => {
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 200);
 
-    // Animate words appearing one by one
+    // Animated words appearing one by one
     titleWords.forEach((word, index) => {
       setTimeout(() => {
         setVisibleWords((prev) => [...prev, index]);
@@ -25,7 +25,7 @@ const Hero = () => {
 
   return (
     <section className={styles.hero} id="home">
-      {/* Clean Background */}
+      {/*Background */}
       <div className={styles.heroBackground}>
         <img src="/image.webp" alt="Boho PG" />
         <div className={styles.overlay}></div>
@@ -50,7 +50,7 @@ const Hero = () => {
                 >
                   {word}
                 </span>
-                {/* Add line breaks at specific positions */}
+                {/* Line breaks at specific positions */}
                 {(index === 1 || index === 2) && <br />}
                 {/* Add space if not the last word and no line break */}
                 {index < titleWords.length - 1 && index !== 1 && index !== 2 && ' '}
