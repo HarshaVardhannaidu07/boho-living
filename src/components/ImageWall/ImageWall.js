@@ -10,18 +10,18 @@ const ImageWall = () => {
   }, []);
 
   const images = [
-    '/CuratedChef (1).jpg',
-    '/CuratedChef (2).jpg',
-    '/CuratedChef (3).jpg',
-    '/CuratedChef (11).jpg',
-    '/CuratedChef (4).jpg', 
-    '/CuratedChef (5).jpg',
-    '/CuratedChef (6).jpg',
-    '/CuratedChef (7).jpg',
-    '/CuratedChef (8).jpg',
-    '/CuratedChef (9).jpg',
-    '/CuratedChef (10).jpg',
-    '/CuratedChef (12).jpg',
+    '/CuratedChef (1).webp',
+    '/CuratedChef (2).webp',
+    '/CuratedChef (3).webp',
+    '/CuratedChef (11).webp',
+    '/CuratedChef (4).webp', 
+    '/CuratedChef (5).webp',
+    '/CuratedChef (6).webp',
+    '/CuratedChef (7).webp',
+    '/CuratedChef (8).webp',
+    '/CuratedChef (9).webp',
+    '/CuratedChef (10).webp',
+    '/CuratedChef (12).webp',
   ];
 
   const getColumnImages = (startIndex, count) => {

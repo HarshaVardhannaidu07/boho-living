@@ -27,7 +27,7 @@ const Hero = () => {
     <section className={styles.hero} id="home">
       {/* Clean Background */}
       <div className={styles.heroBackground}>
-        <img src="/image.jpg" alt="Boho PG" />
+        <img src="/image.webp" alt="Boho PG" />
         <div className={styles.overlay}></div>
       </div>
 
